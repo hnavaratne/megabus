@@ -2,7 +2,7 @@ exports.config = {
 	directConnect:true,
 	framework: 'jasmine',
 	seleniumAddress: 'http://localhost:4444/wd/hub',
-	specs: ['./scripts/login.js'],
+	specs: ['./scripts/closeBusStopPopUP.js'],
 	allScriptsTimeout: 999999,
 	jasmineNodeOpts: {
 		defaultTimeoutInterval: 999999
@@ -17,9 +17,9 @@ exports.config = {
 		'chromeOptions': {
 			prefs: {
 				download: {
-					'prompt_for_download': false,
+					'prompt_for_download': true,
 					'directory_upgrade': true,
-					'default_directory': 'C:/Protractor/'
+					'default_directory': '../download'
 				}
 			}
 		}
