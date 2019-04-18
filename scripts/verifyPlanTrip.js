@@ -24,7 +24,7 @@ describe('Go to page', function(){
 		busPage.selectBusStop(busStop);
 		busPage.viewCityGuide();
 		common.switchTab();
-		browser.wait(EC.presenceOf(element(by.xpath(`//h1[contains(text(),'${planCity}')]`))), 10000);
+		browser.wait(EC.presenceOf(busPage.checkPlanCity(planCity)), 10000);
 	});
     
 });

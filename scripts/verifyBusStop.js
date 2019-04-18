@@ -21,18 +21,18 @@ describe('Go to page', function(){
 
 	it('This should click on the city',function(){        
 		busPage.selectCity(city);
-		browser.wait(EC.presenceOf(element(by.xpath(`//a[@role='button' and contains(text(),"${city}")]`))), 10000);
+		browser.wait(EC.presenceOf(busPage.checkClickCity(city)), 10000);
 	});
     
 	it('This should select the bus stop', function(){
 		busPage.selectBusStop(busStop);
-		browser.wait(EC.presenceOf(element(by.xpath(`//a[@role='button' and contains(text(),'${busStop}')]`))), 10000);
-		browser.wait(EC.presenceOf(element(by.xpath(`//ng-component[@class='ng-star-inserted']/..//p[@class='stop-info__stop__loc']`))), 10000);
+		browser.wait(EC.presenceOf(busPage.checkBusStopExist(busStop)), 10000);
+		browser.wait(EC.presenceOf(busPage.stopInfo()), 10000);
 	});
 
 	it('Location address should be verified on map', function(){
-		browser.wait(EC.presenceOf(element(by.id(`gmimap0`))), 10000);
-		browser.wait(EC.presenceOf(element(by.xpath(`//area[@log='miw' and @coords='${coords}']`))), 10000);
+		browser.wait(EC.presenceOf(busPage.checkMapExistance()), 10000);
+		browser.wait(EC.presenceOf(busPage.checkMapCoords(coords)), 10000);
 	});
 
 });

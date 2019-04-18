@@ -10,6 +10,10 @@
 // This is to call the common functions being used
 var common = require('../commonScripts/common');
 
+//
+var busStop = element(by.xpath(`//ng-component[@class='ng-star-inserted']/..//p[@class='stop-info__stop__loc']`));
+var closeBusStopPopUp = element(by.xpath(`//ng-component[@class='ng-star-inserted']`));
+
 /**
  * This function is to navigate to the mega bus page
  */
@@ -63,4 +67,61 @@ this.closeBusStopPopUp = function closeBusStopPopUp(){
 	var closeBtn = element(by.xpath(`//button[@class='dialog-close']`));
 	common.waitElementToBeClickable(closeBtn);
 	closeBtn.click();
+};
+
+
+/**
+ * This is to return the bus stop element
+ */
+this.checkBusStop = function checkBusStop(){
+	return busStop;
+};
+
+/**
+ * This is to return the Bus Stop Pop up close element
+ */
+this.checkCloseBusStopPopUp = function checkCloseBusStopPopUp(){
+	return closeBusStopPopUp;
+};
+
+/**
+ * This is to return the City element
+ */
+this.checkClickCity = function checkClickCity(city){
+	return element(by.xpath(`//a[@role='button' and contains(text(),"${city}")]`));
+};
+
+/**
+ * This is to return the Bus stop by name element
+ */
+this.checkBusStopExist = function checkBusStopExist(busStop){
+	return element(by.xpath(`//a[@role='button' and contains(text(),'${busStop}')]`));
+};
+
+/**
+ * This is to return the bus stop location
+ */
+this.stopInfo = function stopInfo(){
+	return element(by.xpath(`//ng-component[@class='ng-star-inserted']/..//p[@class='stop-info__stop__loc']`));
+};
+
+/**
+ * This is to return gmap
+ */
+this.checkMapExistance = function checkMapExistance(){
+	return element(by.id(`gmimap0`));
+};
+
+/**
+ * This is to return the map with coordinates
+ */
+this.checkMapCoords = function checkMapCoords(coords){
+	return element(by.xpath(`//area[@log='miw' and @coords='${coords}']`));
+};
+
+/**
+ * This is to reutn the plan city element
+ */
+this.checkPlanCity = function checkPlanCity(planCity){
+	return element(by.xpath(`//h1[contains(text(),'${planCity}')]`));
 };

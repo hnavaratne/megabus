@@ -2,7 +2,7 @@ exports.config = {
 	directConnect:true,
 	framework: 'jasmine',
 	seleniumAddress: 'http://localhost:4444/wd/hub',
-	specs: ['./scripts/closeBusStopPopUP.js'],
+	specs: ['./scripts/verifyBusStop.js'],
 	allScriptsTimeout: 999999,
 	jasmineNodeOpts: {
 		defaultTimeoutInterval: 999999
