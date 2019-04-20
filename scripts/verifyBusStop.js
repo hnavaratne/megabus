@@ -20,19 +20,29 @@ describe('Go to page', function(){
 	});
 
 	it('This should click on the city',function(){        
-		busPage.selectCity(city);
-		browser.wait(EC.presenceOf(busPage.checkClickCity(city)), 10000);
+		busPage.selectCity(city);		
+	});
+
+	it('City should be clicked', function(){
+		EC.presenceOf(busPage.checkClickCity(city));
 	});
     
 	it('This should select the bus stop', function(){
-		busPage.selectBusStop(busStop);
-		browser.wait(EC.presenceOf(busPage.checkBusStopExist(busStop)), 10000);
-		browser.wait(EC.presenceOf(busPage.stopInfo()), 10000);
+		busPage.selectBusStop(busStop);		
+	});
+
+	it('Bus stop should be selected', function(){
+		EC.presenceOf(busPage.checkBusStopExist(busStop));
+		EC.presenceOf(busPage.stopInfo());
 	});
 
 	it('Location address should be verified on map', function(){
-		browser.wait(EC.presenceOf(busPage.checkMapExistance()), 10000);
-		browser.wait(EC.presenceOf(busPage.checkMapCoords(coords)), 10000);
+		EC.presenceOf(busPage.checkMapExistance());
+		
 	});
 
+	it('Location address should be verified on map', function(){
+		EC.presenceOf(busPage.checkMapCoords(coords));
+		
+	});
 });

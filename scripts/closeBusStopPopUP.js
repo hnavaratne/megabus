@@ -22,12 +22,12 @@ describe('Go to page', function(){
 	it('This should click on the city',function(){        
 		busPage.selectCity(city);
 		busPage.selectBusStop(busStop);
-		browser.wait(EC.presenceOf(busPage.checkBusStop()), 10000);
+		EC.presenceOf(busPage.checkBusStop());
 	});
     
 	it('This should close the pop up',function(){        
 		busPage.closeBusStopPopUp();
-		browser.wait(EC.invisibilityOf(busPage.checkCloseBusStopPopUp()), 5000);
+		EC.invisibilityOf(busPage.checkCloseBusStopPopUp());
 	});
     
 });

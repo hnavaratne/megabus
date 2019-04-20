@@ -24,7 +24,7 @@ describe('Go to page', function(){
 		busPage.selectBusStop(busStop);
 		busPage.viewCityGuide();
 		common.switchTab();
-		browser.wait(EC.presenceOf(busPage.checkPlanCity(planCity)), 10000);
+		EC.presenceOf(busPage.checkPlanCity(planCity));
 	});
     
 });

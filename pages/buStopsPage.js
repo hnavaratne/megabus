@@ -10,7 +10,7 @@
 // This is to call the common functions being used
 var common = require('../commonScripts/common');
 
-//
+//Variables for the elements
 var busStop = element(by.xpath(`//ng-component[@class='ng-star-inserted']/..//p[@class='stop-info__stop__loc']`));
 var closeBusStopPopUp = element(by.xpath(`//ng-component[@class='ng-star-inserted']`));
 
