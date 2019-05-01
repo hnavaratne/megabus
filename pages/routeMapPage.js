@@ -28,7 +28,7 @@ var RouteMapPage = function(){
 
     this.enterTownAsDestination = function enterTownAsDestination(destinationCity){
         textDestination.sendKeys(destinationCity);
-        var dropdownDestination = element(by.xpath(`//span[contains(text(), '${destinationCity}')]`));
+        var dropdownDestination = element(by.xpath(`//mb-typeahead-component[@inputid='goingTo']//span[contains(text(), '${destinationCity}')]`));
         dropdownDestination.click();
         //textDestination.sendKeys(protractor.Key.TAB);
     };
