@@ -2,11 +2,11 @@
 
 var homePg = require('../pages/homePage');
 var routeMapPg = require('../pages/routeMapPage');
-var common = require('../commonScripts/common');
+var enums = require('../commonScripts/enums');
 
 //Search criterias on variables
-var originByCity = "New York, NY";
-var destinationByCity = "Boston, MA";
+var originByCity = enums.Towns.NEWYORK;
+var destinationByCity = enums.ZipCodes.BOSTON;
 //var originInMap = elements(by.xpath(`//h3[contains(text(), '${originByCity}')]`));
 //var destinationInMap = element(by.xpath(`//h3[contains(text(), '${destinationByCity}')]`));
 var routeMapUrl = 'https://us.megabus.com/journey-planner/map'
