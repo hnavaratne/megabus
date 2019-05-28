@@ -2,14 +2,11 @@
 'use strict';
 
 var trackMyBus = require('../pages/trackMyBusPage');
+var bus_TestResultTable= element(by.xpath("//*[@class='busTracker__results--top']"));
 
 describe('Track My Bus Page', function () {
 	it('Navigate to Track My Bus Page', function () {
-		trackMyBus.navigateToMegaBus();
-		browser.sleep(5000);
-		trackMyBus.selectCheckMyBus();
-		browser.sleep(5000);
-		trackMyBus.navigateToTrackMyBus();	
+		trackMyBus.navigateToTrackMyBusPage();
 	});
 	
 	it('Verify track my Bus Page Header',function(){
@@ -24,6 +21,10 @@ describe('Track My Bus Page', function () {
 		trackMyBus.enterGoingToTownAndCity("Austin");
 		trackMyBus.checkBusTimes();
 		browser.sleep(5000);
+	});
+
+	it('Check Bus result timings within selected cities',function(){
+		expect(bus_TestResultTable.isPresent()).toBe(true);
 	});
 
 });
