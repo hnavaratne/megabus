@@ -7,10 +7,10 @@
 'use strict';
 
 var trackMyBusPage=function(){
-	var trackMyBus_Title=element(by.xpath("//div/h1"));
-	var trackMyBus_from=element(by.xpath("//*[@id='startingAt']"));
-	var trackMyBus_To=element(by.xpath("//*[@id='goingTo']"));
-	var btn_CheckTimes = element(by.xpath("//button[contains(text(),'Check times')]"));
+	var trackMyBusTitle=element(by.xpath("//div/h1"));
+	var trackMyBusFrom=element(by.xpath("//*[@id='startingAt']"));
+	var trackMyBusTo=element(by.xpath("//*[@id='goingTo']"));
+	var btnCheckTimes = element(by.xpath("//button[contains(text(),'Check times')]"));
 
 	this.navigateToTrackMyBusPage=function(){
 		browser.get("https://us.megabus.com/track-my-bus");
@@ -18,27 +18,23 @@ var trackMyBusPage=function(){
 
 
 	this.trackmyBusPageHeader=function(){
-		return trackMyBus_Title;
+		return trackMyBusTitle;
 	};
 
 	this.enterStartAtTownAndCity=function(fromCity){
-		var from_Dropdown=element(by.xpath(`//span[@class='typeahead__anchor' and contains(text(),'${fromCity}')]`));
-		trackMyBus_from.click();
-		from_Dropdown.click();
+		var fromDropdown=element(by.xpath(`//span[@class='typeahead__anchor' and contains(text(),'${fromCity}')]`));
+		trackMyBusFrom.click();
+		fromDropdown.click();
 	};
 	
 	this.enterGoingToTownAndCity= function(toCity){
-		trackMyBus_To.click();
-		var to_Dropdown=element(by.xpath(`//*[@id='goingTo']/..//span[@class='typeahead__anchor' and contains(text(),'${toCity}')]`));
-		to_Dropdown.click();
+		trackMyBusTo.click();
+		var toDropdown=element(by.xpath(`//*[@id='goingTo']/..//span[@class='typeahead__anchor' and contains(text(),'${toCity}')]`));
+		toDropdown.click();
 	};
 
 	this.checkBusTimes=function(){
-		btn_CheckTimes.click();
-	};
-
-	this.checkBusTimingResults=function(){
-
+		btnCheckTimes.click();
 	};
 };
 
