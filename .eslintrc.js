@@ -33,6 +33,7 @@ module.exports = {
         "protractor": true,
         "it": true,
         "describe": true,
-        "expect": true
+        "expect": true,
+        "beforeAll": true
     }
 };
