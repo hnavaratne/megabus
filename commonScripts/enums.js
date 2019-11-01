@@ -1,3 +1,4 @@
+
 /**
  * This common script is to save all the enums used in the project
  *
@@ -140,5 +141,6 @@ module.exports = new originCityListEnum;
         //BOSTON = '02201'
     //}
 
+}
+module.exports = new cityEnum()
 
-//module.exports = new Enums;
