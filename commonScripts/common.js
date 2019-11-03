@@ -79,6 +79,11 @@ var CommonActions = function () {
 		browser.sleep(3000);
 	};
 
+	//this function will capture todays date in yyyy-mm-dd format
+	this.todayDate = function tomorrowDate(){
+		var today = new Date().toISOString().slice(0,10);
+		return today;
+	};
 
 };
 module.exports = new CommonActions();
