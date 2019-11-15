@@ -13,15 +13,17 @@ var routeMapUrl = 'https://us.megabus.com/journey-planner/map'
 var plannerurl = `https://us.megabus.com/journey-planner/journeys?originId=123&destinationId=94&departureDate=${todayDate}&preventSearch=true`
 var expectLabel = element(by.xpath('//h2[contains(text(),"Book now")]'));
 
+
 describe('Explore Route Map scenation', function(){
 
-    xit('Go to RouteMap page', function(){
-        homePg.get();
-        homePg.clickExploreDropDown();
-        homePg.clickRoutMapOption();
-        browser.sleep(5000);
-        expect(browser.getCurrentUrl()).toEqual(routeMapUrl);
-    });
+	xit('Go to RouteMap page', function(){
+		homePg.get();
+		homePg.clickExploreDropDown();
+		homePg.clickRoutMapOption();
+		browser.sleep(5000);
+		expect(browser.getCurrentUrl()).toEqual(routeMapUrl);
+	});
+
 
     it('Search trip by City', function(){
         routeMapPg.get();

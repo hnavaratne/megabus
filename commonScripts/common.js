@@ -38,6 +38,25 @@ var CommonActions = function () {
 	};
 
 	/**
+	 * This function is to wait for an element to present
+	 * @param	{*} elem element which needs to be waited until it is present
+	 */
+	this.waitElementToBePresent = function waitElementToBePresent (elem) {
+		var EC = protractor.ExpectedConditions;
+		// Waits for the element to be clickable.
+		browser.wait(EC.presenceOf(elem), 25000);
+	};
+
+	/**
+	 * This function is to wait for an element to be visible
+	 * @param	{*} elem element which need to wait until it's visible
+	 */
+	this.waitElementToBeVisible = function waitElementToBeVisible (elem) {
+		var EC = protractor.ExpectedConditions;
+		browser.wait(EC.visibilityOf(elem), 10000);
+	};
+
+	/**
      * This function is to call any page from the given URL
      * @param {*} url
      */
@@ -48,13 +67,13 @@ var CommonActions = function () {
 	/**
      *
      */
-	this.switchTab = function () {
+	this.switchTab = function switchTab() {
 		browser.getAllWindowHandles().then(function (handles) {
 			browser.switchTo().window(handles[1]);
 		});
 	};
 
-	this.loginToApp = function () {
+	this.loginToApp = function loginToApp() {
 		login.get();
 		login.loginHomePage(userName, password);
 		browser.sleep(3000);
@@ -65,5 +84,6 @@ var CommonActions = function () {
 		var today = new Date().toISOString().slice(0,10);
 		return today;
 	};
+
 };
 module.exports = new CommonActions();
